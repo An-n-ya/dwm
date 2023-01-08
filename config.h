@@ -11,8 +11,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=16" };
-static const char dmenufont[]       = "Fira Code:size=16";
+static const char *fonts[]          = { "Fira Code:size=14", "JoyPixels:pixelsize=14" };
+static const char dmenufont[]       = "Fira Code:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -82,12 +82,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray
 static const char *termcmd[]  = { "st", NULL };
 static const char *upvol[] = {"amixer", "set", "Master", "2+", NULL};
 static const char *downvol[] = {"amixer", "set", "Master", "2-", NULL};
-static const char *mute[] = {"amixer", "-q", "set", "Master", "toggle", NULL};
 static const char *upbl[] = {"sudo", "xbacklight", "-int", "10", NULL};
 static const char *downbl[] = {"sudo", "xbacklight", "-dec", "10", NULL};
 
 
-static const char *browsercmd[] = {"firefox", NULL};
+static const char *browsercmd[] = {"google-chrome", NULL};
 static const char *ideacmd[] = {"/home/ankh/app/idea/bin/idea.sh", NULL};
 
 
@@ -97,7 +96,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ 0,			XF86XK_AudioLowerVolume,spawn,	   {.v = downvol} },
 	{ 0,			XF86XK_AudioRaiseVolume,spawn,	   {.v = upvol} },
-	{ 0,			XF86XK_AudioMute,  spawn,	   {.v = mute} },
 	{ 0,			XF86XK_MonBrightnessDown,spawn,	   {.v = downbl} },
 	{ 0,			XF86XK_MonBrightnessUp,spawn,	   {.v = upbl} },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd} },
