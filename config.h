@@ -96,7 +96,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
+static const char *dmenucmd[] = { "rofi", "-show", "drun", "-theme", "/home/ankh/.config/rofi/launchers/type-4/style-2.rasi", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *upvol[] = {"amixer", "set", "Master", "2+", NULL};
 static const char *downvol[] = {"amixer", "set", "Master", "2-", NULL};
