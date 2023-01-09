@@ -49,8 +49,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",	  NULL,			NULL,		0,				1,			 -1 },
-	{ "Firefox",  NULL,			NULL,		1 << 8,			0,			 -1 },
+	{ "Gimp",	  NULL,   NULL,		0,		1,	 -1 },
+	{ "Firefox",      NULL,   NULL,		1 << 8,		0,	 -1 },
+	{ "obsidian",      NULL,   NULL,	1 << 8,		0,	 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,		  "firefox",	NULL,		SPTAG(2),		0,			 -1 },
@@ -106,6 +107,7 @@ static const char *downbl[] = {"sudo", "xbacklight", "-dec", "10", NULL};
 
 static const char *browsercmd[] = {"firefox", NULL};
 static const char *ideacmd[] = {"/home/ankh/app/idea/bin/idea.sh", NULL};
+static const char *screenshotcmd[] = {"flameshot", "gui", NULL};
 
 
 static const Key keys[] = {
@@ -116,6 +118,7 @@ static const Key keys[] = {
 	{ 0,			XF86XK_AudioRaiseVolume,spawn,	   {.v = upvol} },
 	{ 0,			XF86XK_MonBrightnessDown,spawn,	   {.v = downbl} },
 	{ 0,			XF86XK_MonBrightnessUp,spawn,	   {.v = upbl} },
+	{ 0,				XK_Print,   spawn,	   {.v = screenshotcmd} },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
