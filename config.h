@@ -31,7 +31,7 @@ static const char col_border[]      = "#42A5F5";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_border  },
+	[SchemeSel]  = { col_gray4, col_gray1,  col_border  },
 };
 
 typedef struct {
@@ -57,8 +57,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",	  NULL,   NULL,		0,		1,	 -1 },
-	{ "Firefox",      NULL,   NULL,		1 << 8,		0,	 -1 },
 	{ "obsidian",      NULL,   NULL,	1 << 8,		0,	 -1 },
+	{ "code",      NULL,   NULL,	1 << 3 | 1 << 4,		0,	 -1 },
 	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
 	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
 	{ NULL,		  "firefox",	NULL,		SPTAG(2),		0,			 -1 },
