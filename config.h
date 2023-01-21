@@ -16,9 +16,11 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 2;        /* vertical padding for statusbar */
-static const char *fonts[]          = { "Fira Code:size=14", "JoyPixels:pixelsize=14" };
+static const int horizpadbar        = 1;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 1;        /* vertical padding for statusbar */
+static const int vertpad            = 5;       /* vertical padding of bar */
+static const int sidepad            = 10;       /* horizontal padding of bar */
+static const char *fonts[]          = { "Fira Code:size=14", "JoyPixels:pixelsize=14", "LXGW Neo XiHei:size=14" };
 static const char dmenufont[]       = "Fira Code:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
