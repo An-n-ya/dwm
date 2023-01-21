@@ -463,9 +463,16 @@ arrange(Monitor *m)
 void
 arrangemon(Monitor *m)
 {
+	int n = 0;
+	Client *c;
 	strncpy(m->ltsymbol, m->lt[m->sellt]->symbol, sizeof m->ltsymbol);
 	if (m->lt[m->sellt]->arrange)
 		m->lt[m->sellt]->arrange(m);
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	if ((m->lt[m->sellt]->arrange != monocle && n > 1) || !m->lt[m->sellt]->arrange) {
+		sp = sidepad;
+		vp = (topbar == 1) ? vertpad : -vertpad;
+	}
 }
 
 void
@@ -1295,8 +1302,14 @@ monocle(Monitor *m)
 			n++;
 	if (n > 0) /* override layout symbol */
 		snprintf(m->ltsymbol, sizeof m->ltsymbol, "[%d]", n);
-	for (c = nexttiled(m->clients); c; c = nexttiled(c->next))
+	for (c = nexttiled(m->clients); c; c = nexttiled(c->next)) {
 		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
+		sp = 0;
+		vp = 0;
+		resizebarwin(m);
+		updatesystray();
+	}
+		
 }
 
 void
