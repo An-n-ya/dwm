@@ -472,6 +472,9 @@ arrangemon(Monitor *m)
 	if ((m->lt[m->sellt]->arrange != monocle && n > 1) || !m->lt[m->sellt]->arrange) {
 		sp = sidepad;
 		vp = (topbar == 1) ? vertpad : -vertpad;
+	} else if (m->lt[m->sellt]->arrange != monocle && n == 1) {
+		sp = 0;
+		vp = 0;
 	}
 }
 
